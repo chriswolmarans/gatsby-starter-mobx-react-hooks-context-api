@@ -1,7 +1,7 @@
 // tslint:disable:no-console
 import { observable, computed, action } from 'mobx';
 
-export class Temperature {
+export class TemperatureStore {
   @observable unit = 'C';
   @observable temperatureCelsius = 25;
 

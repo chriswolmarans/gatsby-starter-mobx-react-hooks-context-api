@@ -1,16 +1,20 @@
 import * as React from 'react';
-import * as store from '../stores/Temperature';
-import { inject, observer } from 'mobx-react';
+import { useObserver } from 'mobx-react';
+import { Logger } from './Logger';
+import { storeContext } from '../../RootLayout';
+import { useEffect } from 'react';
 
-interface Props {
-  temperature?: store.Temperature;
-}
-
-const Temperature: React.SFC<Props> = ({ temperature }) => {
-  return <div>{temperature!.formatted}</div>;
+export const TemperatureII: React.FC = () => {
+  const { Temperature } = React.useContext(storeContext);
+  useEffect(() => {
+    (window as any).t = Temperature;
+  });
+  return useObserver(() => {
+    return <>
+      <div>{Temperature!.formatted}</div>
+      <Logger label="TemperatureII"/>
+    </>;
+  });
 };
 
-export default inject(
-  // This is truly `any` as "temperature" in `<Provider temperature=...>` is not type-checked
-  (stores: any) => ({ temperature: stores.temperature })
-)(observer(Temperature));
+export default TemperatureII;

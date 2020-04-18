@@ -1,26 +1,18 @@
 import * as React from 'react';
-import { observer } from 'mobx-react';
-import * as store from '../stores/CounterStore';
+import { useObserver } from 'mobx-react';
+import { storeContext } from '../../RootLayout';
+import { Logger } from './Logger'
 
-@observer
-class Counter extends React.Component<{ store: store.CounterStore }> {
-  render() {
-    return (
-      <div>
-        Counter: {this.props.store.count} <br />
-        <button onClick={this.increment}> + </button>
-        <button onClick={this.decrement}> - </button>
-      </div>
-    );
-  }
-
-  increment = () => {
-    this.props.store.increment();
-  };
-
-  decrement = () => {
-    this.props.store.decrement();
-  };
-}
+export const Counter: React.FC = () => {
+  const  { counterStore }  = React.useContext(storeContext);
+  return useObserver(() => {
+    return <>
+      <div>{counterStore.count}</div>
+      <button onClick={() => counterStore.increment()}>++</button>
+      <button onClick={() => counterStore.decrement()}>--</button>
+      <Logger label="counter" />
+    </>
+  });
+};
 
 export default Counter;
