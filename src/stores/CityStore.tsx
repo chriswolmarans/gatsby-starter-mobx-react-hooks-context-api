@@ -1,4 +1,3 @@
-// https://blog.mselee.com/posts/2019/06/08/using-mobx-with-react-hooks-typescript/
 import { observable } from "mobx";
 
 const Cities = [
@@ -25,7 +24,6 @@ export const cityStore = () => {
     //   );
     // },
     setSelectedCity(city) {
-      console.log(city);
       store.selectedCity.set(city)
     }
   };

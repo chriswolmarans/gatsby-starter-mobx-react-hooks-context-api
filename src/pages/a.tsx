@@ -1,7 +1,8 @@
 import * as React from 'react';
-import DefaultLayout from '../components/layout';
-import Search from '../components/search';
-import CityList from '../components/city';
+import { DefaultLayout } from '../components/DefaultLayout';
+import Search from '../components/Search';
+import CityList from '../components/City';
+
 const A: React.FC = () => {
   return (
     <DefaultLayout>

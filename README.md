@@ -1,16 +1,17 @@
-# Gatsby MobX starter
+# Gatsby MobX starter using React Context & Hooks
 
-Gatsby + MobX + TypeScript starter.
+Gatsby + MobX + TypeScript starter + (React Context & Hooks).
 
 Why? Because Gatsby is excellent [also for React apps (not just static sites)](https://www.gatsbyjs.org/blog/2018-10-15-beyond-static-intro/) and I wanted to have a quick alternative to `create-react-app --typescript` with a couple of things configured.
 
 ## Features
 
-- Gatsby v2 + TypeScript
-- MobX with decorators
+- Gatsby v2 + TypeScript + MobX setup forked from [@borekb/gatsby-starter-mobx](https://github.com/borekb/gatsby-starter-mobx)
+- MobX with React Context
 - Two examples based on [@mweststrate's Egghead course](https://egghead.io/courses/manage-complex-state-in-react-apps-with-mobx):
-    - "Counter" as a basic store and an observer
-    - "Temperature" as a demo of `<Provider>` and type-safe `inject`
+    - "Counter" and "Temperature" as a basic store and an observer
+- Search example based on mselee's post      
+    - [Using Mobx with React hooks + TypeScript](https://blog.mselee.com/posts/2019/06/08/using-mobx-with-react-hooks-typescript/)
 - `.editorconfig` & Prettier
 - TSLint
 - Jest setup

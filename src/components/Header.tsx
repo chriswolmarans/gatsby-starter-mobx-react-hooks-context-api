@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Counter } from './Counter';
-import { TemperatureII } from './Temperature';
+import { Temperature } from './Temperature';
 import { SelectedCity } from './SelectedCity';
 
 export const Header: React.FC = () => {
@@ -8,7 +8,7 @@ export const Header: React.FC = () => {
     <header className="App-header">
       <SelectedCity/>
       <Counter/>
-      <TemperatureII/>
+      <Temperature/>
     </header>
   );
 };

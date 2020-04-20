@@ -3,7 +3,7 @@ import { Styled, jsx, NavLink, Flex } from 'theme-ui';
 import * as React from 'react';
 import { Link } from 'gatsby';
 import { storeContext } from '../../RootLayout';
-import { Header } from './header';
+import { Header } from './Header';
 
 export const DefaultLayout = ({ children }) => {
   return (
@@ -25,7 +25,7 @@ export const DefaultLayout = ({ children }) => {
                 <Link to='/'>home</Link>
               </li>
               <li>
-                <Link to='/counterPage/'>counter example</Link>
+                <Link to='/counter-page/'>counter example</Link>
               </li>
               <li>
                 <Link to='/temperature/'>temperature example</Link>

@@ -1,8 +1,8 @@
 import * as React from 'react';
 import Temperature from '../components/Temperature';
-import DefaultLayout from '../components/layout';
+import DefaultLayout from '../components/DefaultLayout';
 
-const TempPage: React.FC = () => {
+const TemperaturePage: React.FC = () => {
   return (
     <>
       <DefaultLayout>
@@ -15,4 +15,4 @@ const TempPage: React.FC = () => {
   );
 };
 
-export default TempPage;
+export default TemperaturePage;

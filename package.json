@@ -1,8 +1,8 @@
 {
-  "name": "@borekb/gatsby-starter-mobx",
-  "description": "Gatsby starter with MobX and TypeScript",
+  "name": "@chriswolmarans/gatsby-starter-mobx-context-hooks",
+  "description": "Gatsby MobX starter using React Context & Hooks",
   "version": "1.0.0",
-  "author": "Borek Bernard <borekb@gmail.com>",
+  "author": "Chris Wolmarans <chris.wolmarans@gmail.com>",
   "license": "MIT",
   "scripts": {
     "start": "gatsby develop",

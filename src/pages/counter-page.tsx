@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Counter from '../components/Counter';
-import DefaultLayout from '../components/layout';
+import DefaultLayout from '../components/DefaultLayout';
 
 const CounterPage: React.FC = () => {
   return (

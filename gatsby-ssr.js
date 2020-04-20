@@ -1,6 +1,3 @@
-import React from 'react';
-import StoreProvider from './RootLayout'
-// export const wrapRootElement = ({ element }) => <RootLayout>{element}</RootLayout>;
-// export { StoreProvider } from './RootLayout'
+import StoreProvider from './RootLayout';
 
-export const wrapRootElement = StoreProvider
+export const wrapRootElement = StoreProvider;
