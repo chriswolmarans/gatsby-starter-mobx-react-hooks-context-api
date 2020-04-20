@@ -1,12 +1,18 @@
-import { observable } from "mobx";
+import { IObservableValue, observable } from 'mobx';
 
 const Cities = [
   'Amsterdam',
   'London',
-  'Madrid'
+  'Madrid',
 ];
 
-export const cityStore = () => {
+export const cityStore: () => {
+  selectedCity: IObservableValue<string>;
+  query: IObservableValue<string>;
+  setSelectedCity(city: string): void;
+  readonly filteredCities: string[];
+  setQuery(query: string): void
+} = () => {
   const store = {
     query: observable.box(''),
     setQuery(query: string) {
@@ -14,7 +20,7 @@ export const cityStore = () => {
     },
     get filteredCities() {
       return Cities.filter(city =>
-        city.toLowerCase().includes(store.query.get())
+        city.toLowerCase().includes(store.query.get()),
       );
     },
     selectedCity: observable.box('Amsterdam'),
@@ -23,9 +29,9 @@ export const cityStore = () => {
     //     store.selectedCity === city
     //   );
     // },
-    setSelectedCity(city) {
-      store.selectedCity.set(city)
-    }
+    setSelectedCity(city: string):void {
+      store.selectedCity.set(city);
+    },
   };
 
   return store;

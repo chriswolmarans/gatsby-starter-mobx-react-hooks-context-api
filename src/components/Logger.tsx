@@ -1,7 +1,11 @@
 import * as React from 'react';
 import * as moment from 'moment';
 
-export const Logger: React.FC = (props) => {
+type LoggerProps = {
+  label: string
+}
+
+export const Logger: React.FC<LoggerProps> = (props) => {
   console.log(`-------------------------------`);
   console.log(`${props.label} rendered at: `);
   console.log(`${moment().format('MMMM Do YYYY, h:mm:ss a')}`);
