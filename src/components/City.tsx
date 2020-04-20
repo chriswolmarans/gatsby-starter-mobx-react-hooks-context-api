@@ -8,17 +8,13 @@ type CityViewProps = { cities: string[], setSelectedCity(city:string): void, sel
 export const CityView: React.FC<CityViewProps> = ({ cities, setSelectedCity, selectedCity }) => {
   return (
     <ul>
-      {cities.map((city, index) => (
-
-        // <li key={city + index}>{city}</li>
+      {cities.map((city) => (
         <li
-          key={city + index}
+          key={city}
           onClick={() => setSelectedCity(city)}
-          // @ts-ignore
-          className={city === selectedCity ? 'selected' : null}
+          className={city === selectedCity ? 'selected' : undefined}
         >
-          {city}
-          <button>select city</button>
+          {city} <button>select city</button>
         </li>
       ))
       }
@@ -26,7 +22,7 @@ export const CityView: React.FC<CityViewProps> = ({ cities, setSelectedCity, sel
   );
 };
 
-export const CityList: React.FC<CityViewProps> = () => {
+export const CityList: React.FC = () => {
   const { cityStore } = React.useContext(storeContext);
   if (!cityStore) {
     throw Error('Store shouldn\'t be null');
