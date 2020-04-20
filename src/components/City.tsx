@@ -15,8 +15,7 @@ export const CityView: React.FC<{ cities: string[] }> = ({ cities, setSelectedCi
         // @ts-ignore
           className={ city === selectedCity ? 'selected' : null}
         >
-          {city}
-        <button>select city</button>
+          {city} <button>select city</button>
         </li>
         ))
       }

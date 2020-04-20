@@ -28,10 +28,7 @@ export const DefaultLayout = ({ children }) => {
                 <Link to='/counter-page/'>counter example</Link>
               </li>
               <li>
-                <Link to='/temperature/'>temperature example</Link>
-              </li>
-              <li>
-                <Link to='/a/'>Ah</Link>
+                <Link to='/temperature-page/'>temperature example</Link>
               </li>
             </ul>
             {children}
