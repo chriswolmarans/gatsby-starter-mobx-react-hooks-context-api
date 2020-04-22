@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx, Box, Input, Close } from 'theme-ui';
 import * as React from 'react';
 import { useObserver } from 'mobx-react-lite';
 import { storeContext } from '../../RootLayout';
@@ -12,10 +14,25 @@ export const Search: React.FC = () => {
   const { query, setQuery } = cityStore;
 
   return useObserver(() => {
-    return <>
-      <input value={query.get()} onChange={e => setQuery(e.target.value)}/>
+    return <Box
+      sx={{
+        maxWidth: '400px',
+        margin: '0 auto',
+        display:  'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+      }}
+      mb={5}
+    >
+      <Input value={query.get()} onChange={e => setQuery(e.target.value)}/>
+      <Close
+        sx={{
+        height: 'unset'
+      }}
+        onClick={() => cityStore.setQuery('')}
+      />
       <Logger label="Search"/>
-    </>;
+    </Box>;
   });
 };
 

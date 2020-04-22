@@ -5,13 +5,13 @@ import { storeContext } from '../../RootLayout';
 import { useEffect } from 'react';
 
 export const Temperature: React.FC = () => {
-  const { Temperature } = React.useContext(storeContext);
+  const { temperatureStore } = React.useContext(storeContext);
   useEffect(() => {
-    (window as any).t = Temperature;
+    (window as any).t = temperatureStore;
   });
   return useObserver(() => {
     return <>
-      <div>{Temperature!.formatted}</div>
+      <div>{temperatureStore!.formatted}</div>
       <Logger label="Temperature"/>
     </>;
   });

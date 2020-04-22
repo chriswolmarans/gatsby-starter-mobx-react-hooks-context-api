@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby MobX starter',
+    title: 'Gatsby MobX starter using React Context & Hooks',
   },
   plugins: [
     'gatsby-plugin-typescript',

@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx, Box, Button } from 'theme-ui';
 import * as React from 'react';
 import { useObserver } from 'mobx-react';
 import { storeContext } from '../../RootLayout';
@@ -7,14 +9,30 @@ type CityViewProps = { cities: string[], setSelectedCity(city:string): void, sel
 
 export const CityView: React.FC<CityViewProps> = ({ cities, setSelectedCity, selectedCity }) => {
   return (
-    <ul>
+    <ul
+      sx={{
+        margin: '0 auto',
+        padding: '0',
+        display: 'flex',
+        flexDirection: 'column',
+        maxWidth: 'fit-content',
+        listStyle: 'none',
+        '& > li': {
+          margin: '10px 10px',
+          textAlign: 'end',
+        },
+        '& > li > span': {
+          margin: '20px 10px',
+        }
+      }}
+    >
       {cities.map((city) => (
         <li
           key={city}
           onClick={() => setSelectedCity(city)}
           className={city === selectedCity ? 'selected' : undefined}
         >
-          {city} <button>select city</button>
+          <span>{city}</span><Button>select city</Button>
         </li>
       ))
       }
@@ -28,13 +46,13 @@ export const CityList: React.FC = () => {
     throw Error('Store shouldn\'t be null');
   }
   return useObserver(() => {
-    return <>
+    return <Box>
       <CityView
         cities={cityStore?.filteredCities}
         setSelectedCity={cityStore.setSelectedCity}
         selectedCity={'Amsterdam'}/>
       <Logger label="CityList"/>
-    </>;
+    </Box>;
   });
 };
 

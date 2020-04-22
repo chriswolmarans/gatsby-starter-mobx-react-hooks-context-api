@@ -4,8 +4,5 @@ export default {
   ...tailwind,
   styles: {
     ...tailwind.styles,
-    '.selected': {
-      color: 'pink'
-    }
   },
 }
