@@ -12,7 +12,7 @@ export const Counter: React.FC = () => {
       flexDirection: 'row',
       justifyContent: 'center'
     }}>
-      <Button onClick={() => counterStore.increment()}>+</Button>
+      <Button onClick={() => counterStore.decrement()}>-</Button>
       <Box
         sx={{
           fontWeight: 'bold',
@@ -20,7 +20,7 @@ export const Counter: React.FC = () => {
           minWidth: '6rem'
         }}
       >{counterStore.count}</Box>
-      <Button onClick={() => counterStore.decrement()}>-</Button>
+      <Button onClick={() => counterStore.increment()}>+</Button>
       <Logger label="counter"/>
     </Flex>;
   });
