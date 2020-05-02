@@ -3,12 +3,19 @@ import { Styled, jsx, Box} from 'theme-ui';
 import * as React from 'react';
 import { storeContext } from '../../RootLayout';
 import { Header } from './Header';
+import { Helmet } from 'react-helmet';
 
-export const DefaultLayout = ({ children }) => {
+export const DefaultLayout: React.FC = ({ children }) => {
   return (
     <storeContext.Consumer>
       {() => (
         <Styled.root className="App">
+          <Helmet>
+            <link
+              href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto:wght@300;400&display=swap"
+              rel="stylesheet"
+            />
+          </Helmet>
           <div
             sx={{
               margin: '0 auto',

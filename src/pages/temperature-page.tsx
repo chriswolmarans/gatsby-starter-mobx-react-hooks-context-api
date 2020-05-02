@@ -5,6 +5,7 @@ import Temperature from '../components/Temperature';
 import DefaultLayout from '../components/DefaultLayout';
 import { storeContext } from '../../RootLayout';
 import { useObserver } from 'mobx-react';
+import { GatsbyHelmet } from '../utils/helmet';
 
 const TemperaturePage: React.FC = () => {
   const { temperatureStore } = React.useContext(storeContext);
@@ -14,6 +15,7 @@ const TemperaturePage: React.FC = () => {
   return useObserver(() => {
     return (
       <DefaultLayout>
+        <GatsbyHelmet title="Temperature Page" />
         <Box
           sx={{
             maxWidth: '400px',
@@ -28,10 +30,10 @@ const TemperaturePage: React.FC = () => {
             }}
           >Set Temperature in Celsius:</Label>
           <Input
-            type='number'
-            name='Temperature'
+            type="number"
+            name="Temperature"
             mb={3}
-            onChange={(event) => temperatureStore.setTemperatureCelsius(event.target.value)}
+            onChange={(event) => temperatureStore.setTemperatureCelsius(Number(event.target.value))}
             value={temperatureStore.temperatureCelsius}
           />
         </Box>

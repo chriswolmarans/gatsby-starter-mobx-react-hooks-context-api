@@ -5,10 +5,20 @@
     "noEmit": true,
     "module": "commonjs",
     "target": "esnext",
-    "lib": ["dom", "esnext"],
+    "lib": ["dom", "es2015", "es2017", "esnext"],
     "jsx": "react",
     "experimentalDecorators": true,
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "baseUrl": "./src",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "types": ["node"],
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "removeComments": false,
+    "preserveConstEnums": true
   },
-  "include": ["src"]
+  "include": ["./src/**/*"]
 }
