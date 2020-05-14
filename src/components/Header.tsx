@@ -1,16 +1,20 @@
 /** @jsx jsx */
 import { jsx, Divider } from 'theme-ui';
 import * as React from 'react';
-import { CounterTotal } from './CounterTotal';
-import { Temperature } from './Temperature';
-import { SelectedCity } from './SelectedCity';
+import { CounterTotal } from 'components/CounterTotal';
+import { Temperature } from 'components/Temperature';
+import { SelectedCity } from 'components/SelectedCity';
 import { Link } from 'gatsby';
+import ColorSwitch from 'components/ColorSwitch';
 
 export const Header: React.FC = () => {
 
   return (
     <header className="App-header">
-      <h1><Link to='/'>Gatsby MobX starter using React Context & Hooks</Link></h1>
+      <h1><Link sx={{
+        variant: 'link.heading',
+      }}
+        to='/'>Gatsby MobX starter using React Context & Hooks</Link></h1>
       <div
         sx={{
           display: 'flex',
@@ -70,14 +74,22 @@ export const Header: React.FC = () => {
           },
         }}>
         <li>
-          <Link to='/'>home</Link>
+          <Link sx={{
+            variant: 'link.menu',
+          }}
+            to='/'>home</Link>
         </li>
         <li>
-          <Link to='/counter-page/'>counter example</Link>
+          <Link sx={{
+            variant: 'link.menu',
+          }} to='/counter-page/'>counter example</Link>
         </li>
         <li>
-          <Link to='/temperature-page/'>temperature example</Link>
+          <Link sx={{
+            variant: 'link.menu',
+          }} to='/temperature-page/'>temperature example</Link>
         </li>
+        <li><ColorSwitch/></li>
       </ul>
       <Divider/>
     </header>

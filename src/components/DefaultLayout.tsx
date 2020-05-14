@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { Styled, jsx, Box} from 'theme-ui';
+import { Styled, jsx, Box } from 'theme-ui';
 import * as React from 'react';
 import { storeContext } from '../../RootLayout';
-import { Header } from './Header';
+import { Header } from 'components/Header';
 import { Helmet } from 'react-helmet';
 
 export const DefaultLayout: React.FC = ({ children }) => {
@@ -31,7 +31,7 @@ export const DefaultLayout: React.FC = ({ children }) => {
                 maxWidth: 960,
                 padding: '0px 1.0875rem 1.45rem',
                 paddingTop: 0,
-                textAlign: 'center'
+                textAlign: 'center',
               }}
             >
               {children}

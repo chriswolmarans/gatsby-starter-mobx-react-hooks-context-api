@@ -1,5 +1,4 @@
 import * as React from 'react';
-// import { useLocalStore } from 'mobx-react';
 import { CounterStore, cityStore, TemperatureStore } from './src/stores/stores';
 
 export const storeContext = React.createContext({
@@ -11,7 +10,6 @@ export const storeContext = React.createContext({
 export const useStores = () => React.useContext(storeContext);
 
 const StoreProvider = ({ children }) => {
-  // const store = useLocalStore(storeContext); WTF!? never works - https://mobx-react.js.org/recipes-context
   const store = useStores();
 
   return (
