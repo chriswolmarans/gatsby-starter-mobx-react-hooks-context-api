@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { CounterStore, cityStore, TemperatureStore } from './src/stores/stores';
+import { CounterStore, cityStore, TemperatureStore } from './src/stores';
 
 export const storeContext = React.createContext({
   counterStore: new CounterStore(),
