@@ -14,18 +14,16 @@ export const DefaultLayout: React.FC = ({ children }) => {
             minWidth: '320px'
           }}
           className="App">
-          <Helmet>
-            <link
-              href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto:wght@300;400&display=swap"
-              rel="stylesheet"
-            />
-          </Helmet>
           <div
             sx={{
               margin: '0 auto',
               maxWidth: 960,
               padding: '0px 1.0875rem 1.45rem',
               paddingTop: 0,
+              display: 'flex',
+              flexDirection: 'column',
+              minHeight: '100vh',
+
             }}
           >
             <Header/>
@@ -40,6 +38,12 @@ export const DefaultLayout: React.FC = ({ children }) => {
             >
               {children}
             </Box>
+            <footer
+              sx={{
+                width: '100%',
+              }}>
+              Footer
+            </footer>
           </div>
         </Styled.root>
       )}

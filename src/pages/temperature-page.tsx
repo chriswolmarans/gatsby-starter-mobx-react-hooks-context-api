@@ -45,16 +45,25 @@ const TemperaturePage: React.FC = () => {
             }}>
             <Label>
               <Radio
+                sx={{
+                  color: 'text',
+                }}
                 checked={temperatureStore.unit === 'K'}
                 onChange={() => temperatureStore.setUnit('K')}/> Kelvin
             </Label>
             <Label>
               <Radio
+                sx={{
+                  color: 'text',
+                }}
                 checked={temperatureStore.unit === 'F'}
                 onChange={() => temperatureStore.setUnit('F')}/> Fahrenheit
             </Label>
             <Label>
               <Radio
+                sx={{
+                  color: 'text',
+                }}
                 checked={temperatureStore.unit === 'C'}
                 onChange={() => temperatureStore.setUnit('C')}/> Celsius
             </Label>

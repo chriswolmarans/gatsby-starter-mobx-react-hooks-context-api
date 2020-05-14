@@ -2,7 +2,9 @@
 
 Gatsby + MobX + TypeScript starter + (React Context & Hooks).
 
-Why? Because Gatsby is excellent [also for React apps (not just static sites)](https://www.gatsbyjs.org/blog/2018-10-15-beyond-static-intro/) and I wanted to have a quick alternative to `create-react-app --typescript` with a couple of things configured.
+Why? Because Gatsby is excellent [also for React apps (not just static sites)](https://www.gatsbyjs.org/blog/2018-10-15-beyond-static-intro/). 
+
+This starter was inspired by [ueno-gatsby-starter](https://github.com/ueno-llc/ueno-gatsby-starter) and [luke-gatsby-starter](https://github.com/lukethacoder/luke-gatsby-starter) with the initial Gatsby v2 + TypeScript + MobX setup from [@borekb/gatsby-starter-mobx](https://github.com/borekb/gatsby-starter-mobx)
 
 ## Features
 MobX & React Context with a single Root store to attach every other store onto it, so we have multiple global stores in order to better separate our different concerns (or you can have multiple contexts, each for own segment of the app). 
