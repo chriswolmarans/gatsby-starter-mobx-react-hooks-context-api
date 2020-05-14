@@ -9,7 +9,11 @@ export const DefaultLayout: React.FC = ({ children }) => {
   return (
     <storeContext.Consumer>
       {() => (
-        <Styled.root className="App">
+        <Styled.root
+          sx={{
+            minWidth: '320px'
+          }}
+          className="App">
           <Helmet>
             <link
               href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto:wght@300;400&display=swap"

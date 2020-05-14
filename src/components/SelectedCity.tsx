@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useObserver } from 'mobx-react';
 import { storeContext } from '../../RootLayout';
+import { Box } from 'theme-ui';
 
 export const SelectedCity: React.FC = () => {
   const { cityStore } = React.useContext(storeContext);
@@ -8,9 +9,9 @@ export const SelectedCity: React.FC = () => {
     throw Error('Store shouldn\'t be null');
   }
   return useObserver(() => {
-    return <>
+    return <Box>
       {cityStore.selectedCity.get()}
-    </>;
+    </Box>;
   });
 };
 
