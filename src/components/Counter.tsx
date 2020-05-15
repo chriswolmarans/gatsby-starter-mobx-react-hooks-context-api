@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import * as React from 'react';
 import { useObserver } from 'mobx-react';
+// @ts-ignore
 import { storeContext } from '../../RootLayout';
 import { Logger } from './Logger';
 import { Button, Box, jsx, Flex } from 'theme-ui';

@@ -18,6 +18,7 @@
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/plugin-proposal-decorators": "^7.8.3",
     "@theme-ui/presets": "^0.3.0",
+    "@types/mocha": "^7.0.2",
     "@types/react-helmet": "^5.0.15",
     "@types/theme-ui": "^0.3.1",
     "animejs": "^3.2.0",
@@ -43,7 +44,7 @@
     "typescript": "^3.8.3"
   },
   "devDependencies": {
-    "@types/jest": "^25.1.4",
+    "@types/jest": "^25.2.2",
     "@types/react-test-renderer": "^16.9.2",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.2.6",
@@ -83,6 +84,24 @@
     },
     "setupFiles": [
       "<rootDir>/jest/loadershim.js"
-    ]
+    ],
+    "collectCoverage": true,
+    "coverageReporters": [
+      "html"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}"
+    ],
+    "coveragePathIgnorePatterns": [
+      "!<rootDir>/node_modules/",
+      ".cache"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "lines": 90,
+        "statements": 90
+      }
+    },
+    "coverageDirectory": "<rootDir>/jest/coverage"
   }
 }

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useObserver } from 'mobx-react';
 import { Logger } from './Logger';
+// @ts-ignore
 import { storeContext } from '../../RootLayout';
 import { useEffect } from 'react';
 

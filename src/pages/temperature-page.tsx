@@ -3,6 +3,7 @@ import { jsx, Flex, Label, Radio, Box, Input, Styled } from 'theme-ui';
 import * as React from 'react';
 import Temperature from '../components/Temperature';
 import DefaultLayout from '../components/DefaultLayout';
+// @ts-ignore
 import { storeContext } from '../../RootLayout';
 import { useObserver } from 'mobx-react';
 import { GatsbyHelmet } from '../utils/helmet';

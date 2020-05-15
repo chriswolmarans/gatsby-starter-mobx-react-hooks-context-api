@@ -2,6 +2,7 @@
 import { jsx, Box, Button } from 'theme-ui';
 import * as React from 'react';
 import { useObserver } from 'mobx-react';
+// @ts-ignore
 import { storeContext } from '../../RootLayout';
 import { Logger } from './Logger';
 

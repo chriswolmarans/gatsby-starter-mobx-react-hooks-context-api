@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import { Styled, jsx, Box } from 'theme-ui';
 import * as React from 'react';
+// @ts-ignore
 import { storeContext } from '../../RootLayout';
-import { Header } from 'components/Header';
-import { Helmet } from 'react-helmet';
+import { Header } from './Header';
 
 export const DefaultLayout: React.FC = ({ children }) => {
   return (

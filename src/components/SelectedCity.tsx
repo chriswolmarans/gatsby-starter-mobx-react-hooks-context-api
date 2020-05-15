@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useObserver } from 'mobx-react';
+// @ts-ignore
 import { storeContext } from '../../RootLayout';
 import { Box } from 'theme-ui';
 

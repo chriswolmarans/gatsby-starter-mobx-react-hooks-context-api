@@ -1,11 +1,11 @@
 /** @jsx jsx */
 import { jsx, Divider } from 'theme-ui';
 import * as React from 'react';
-import { CounterTotal } from 'components/CounterTotal';
-import { Temperature } from 'components/Temperature';
-import { SelectedCity } from 'components/SelectedCity';
+import { CounterTotal } from './CounterTotal';
+import { Temperature } from './Temperature';
+import { SelectedCity } from './SelectedCity';
 import { Link } from 'gatsby';
-import ColorSwitch from 'components/ColorSwitch';
+import ColorSwitch from './ColorSwitch';
 
 export const Header: React.FC = () => {
 
