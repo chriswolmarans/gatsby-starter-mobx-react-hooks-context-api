@@ -15,7 +15,7 @@ export default {
       padding: 3,
     },
   },
-  initialColorMode: 'light',
+  initialColorMode: 'default',
   colors: {
     ...tailwind.colors,
     modes: {

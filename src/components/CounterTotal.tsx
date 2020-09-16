@@ -1,18 +1,12 @@
 import * as React from 'react';
-import { useObserver } from 'mobx-react';
-// @ts-ignore
-import { storeContext } from '../../RootLayout';
+import { observer } from "mobx-react-lite";
+import { useMst } from '../models/Root';
 
-export const CounterTotal: React.FC = () => {
-  const { counterStore } = React.useContext(storeContext);
-  if (!counterStore) {
-    throw Error('Store shouldn\'t be null');
-  }
-  return useObserver(() => {
-    return <>
-      {counterStore.count}
-    </>;
-  });
-};
+export const CounterTotal: React.FC = observer(() => {
+  const { counter } = useMst();
+    return (<>
+      {counter.count}
+    </>);
+});
 
 export default CounterTotal;

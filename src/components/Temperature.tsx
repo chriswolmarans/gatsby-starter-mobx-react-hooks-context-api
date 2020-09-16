@@ -1,21 +1,20 @@
 import * as React from 'react';
-import { useObserver } from 'mobx-react';
+import { observer } from "mobx-react-lite";
 import { Logger } from './Logger';
-// @ts-ignore
-import { storeContext } from '../../RootLayout';
+import { useMst } from '../models/Root';
 import { useEffect } from 'react';
 
-export const Temperature: React.FC = () => {
-  const { temperatureStore } = React.useContext(storeContext);
+export const Temperature: React.FC = observer(() => {
+  const { temperature } = useMst();
   useEffect(() => {
-    (window as any).t = temperatureStore;
+    (window as any).t = temperature;
   });
-  return useObserver(() => {
-    return <>
-      <div>{temperatureStore!.formatted}</div>
+
+    return (<>
+      <div>{temperature!.formatted}</div>
       <Logger label="Temperature"/>
-    </>;
-  });
-};
+    </>);
+
+});
 
 export default Temperature;

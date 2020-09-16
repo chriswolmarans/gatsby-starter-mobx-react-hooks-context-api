@@ -1,30 +1,29 @@
 /** @jsx jsx */
 import * as React from 'react';
-import { useObserver } from 'mobx-react';
-// @ts-ignore
-import { storeContext } from '../../RootLayout';
+import { observer } from "mobx-react-lite";
+import { useMst } from '../models/Root';
 import { Logger } from './Logger';
 import { Button, Box, jsx, Flex } from 'theme-ui';
 
-export const Counter: React.FC = () => {
-  const { counterStore } = React.useContext(storeContext);
-  return useObserver(() => {
-    return <Flex mt={5} sx={{
+export const Counter: React.FC = observer(() => {
+  const { counter } = useMst();
+    return (
+    <Flex mt={5} sx={{
       flexDirection: 'row',
       justifyContent: 'center'
     }}>
-      <Button onClick={() => counterStore.decrement()}>-</Button>
+      <Button onClick={() => counter.decrement()}>-</Button>
       <Box
         sx={{
           fontWeight: 'bold',
           fontSize: '4rem',
           minWidth: '6rem'
         }}
-      >{counterStore.count}</Box>
-      <Button onClick={() => counterStore.increment()}>+</Button>
+      >{counter.count}</Box>
+      <Button onClick={() => counter.increment()}>+</Button>
       <Logger label="counter"/>
-    </Flex>;
-  });
-};
+    </Flex>
+  );
+});
 
 export default Counter;

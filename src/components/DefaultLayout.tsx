@@ -1,14 +1,12 @@
 /** @jsx jsx */
 import { Styled, jsx, Box } from 'theme-ui';
 import * as React from 'react';
-// @ts-ignore
-import { storeContext } from '../../RootLayout';
+import { Provider, rootStore } from "../models/Root"
 import { Header } from './Header';
 
 export const DefaultLayout: React.FC = ({ children }) => {
   return (
-    <storeContext.Consumer>
-      {() => (
+    <Provider value={rootStore}>
         <Styled.root
           sx={{
             minWidth: '320px'
@@ -46,8 +44,7 @@ export const DefaultLayout: React.FC = ({ children }) => {
             </footer>
           </div>
         </Styled.root>
-      )}
-    </storeContext.Consumer>
+    </Provider>
   );
 };
 export default DefaultLayout;

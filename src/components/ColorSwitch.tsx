@@ -9,7 +9,7 @@ const ColorSwitch = () => {
     <div sx={{ textAlign: 'center' }}>
       <Button
         onClick={() => {
-          setColorMode(colorMode === 'light' ? 'dark' : 'light');
+          setColorMode(colorMode === 'default' ? 'dark' : 'default');
         }}
         sx={{
           backgroundColor: 'primary',
@@ -17,7 +17,7 @@ const ColorSwitch = () => {
           py: 3,
         }}
       >
-        Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
+        Toggle {colorMode === 'default' ? 'Dark' : 'Light'}
       </Button>
     </div>
   );

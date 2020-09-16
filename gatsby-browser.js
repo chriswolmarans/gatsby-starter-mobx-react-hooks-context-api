@@ -1,3 +1,3 @@
-import StoreProvider from './RootLayout';
+import Provider from "./src/models/Root";
 
-export const wrapRootElement = StoreProvider;
+export const wrapRootElement = Provider;

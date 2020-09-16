@@ -1,19 +1,15 @@
 import * as React from 'react';
-import { useObserver } from 'mobx-react';
-// @ts-ignore
-import { storeContext } from '../../RootLayout';
+import { observer } from "mobx-react-lite";
+import { useMst } from '../models/Root';
 import { Box } from 'theme-ui';
 
-export const SelectedCity: React.FC = () => {
-  const { cityStore } = React.useContext(storeContext);
-  if (!cityStore) {
-    throw Error('Store shouldn\'t be null');
-  }
-  return useObserver(() => {
-    return <Box>
-      {cityStore.selectedCity.get()}
-    </Box>;
-  });
-};
+export const SelectedCity: React.FC = observer(() => {
+  const { city } = useMst();
+
+    return (<Box>
+      {city.selectedCity}
+    </Box>);
+
+});
 
 export default SelectedCity;
